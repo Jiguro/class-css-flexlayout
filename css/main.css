@@ -1,5 +1,14 @@
 section {
-  width: 1000px;
-  height: 1000px;
-  border: 5px solid black;
+  width: 800px;
+  height: 800px;
+  border: 5px dotted black;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.most-outer-playground {
+  display: initial;
 }
