@@ -2,6 +2,7 @@
 @use 'variables/country-in' as india;
 @use 'variables/country-jp' as japan;
 @use 'variables/country-se' as sweden;
+@use 'variables/country-de' as germany;
 
 .classroom {
   display: grid;
@@ -67,6 +68,20 @@
   p {
     border: 1px solid sweden.$primary-colour;
     color: sweden.$secondary-colour;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: lighter;
+  }
+}
+
+.germany {
+  &::before {
+    content: url('https://flagicons.lipis.dev/flags/4x3/de.svg');
+  }
+  p {
+    border: 1px solid germany.$primary-colour;
+    color: germany.$secondary-colour;
 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
