@@ -4,16 +4,16 @@
 @use 'variables/country-se' as sweden;
 @use 'variables/country-de' as germany;
 
-@mixin asia-font-style {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@mixin europe-font-style {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-  font-weight: lighter;
+@mixin continent-font-style($continent) {
+  @if $continent == europe {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: lighter;
+  } @else if $continent == asia {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+  }
 }
 
 .classroom {
@@ -39,7 +39,7 @@
     border: 2px solid spain.$primary-colour;
     color: spain.$secondary-colour;
 
-    @include europe-font-style;
+    @include continent-font-style(europe);
   }
 }
 
@@ -51,7 +51,7 @@
     border: 1px solid india.$primary-colour;
     color: india.$secondary-colour;
 
-    @include asia-font-style;
+    @include continent-font-style(asia);
   }
 }
 
@@ -63,7 +63,7 @@
     border: 1px solid japan.$primary-colour;
     color: japan.$secondary-colour;
 
-    @include asia-font-style;
+    @include continent-font-style(asia)
   }
 }
 
@@ -75,7 +75,7 @@
     border: 1px solid sweden.$primary-colour;
     color: sweden.$secondary-colour;
 
-    @include europe-font-style;
+    @include continent-font-style(europe);
   }
 }
 
@@ -87,6 +87,6 @@
     border: 1px solid germany.$primary-colour;
     color: germany.$secondary-colour;
 
-    @include europe-font-style;
+    @include continent-font-style(europe);
   }
 }
